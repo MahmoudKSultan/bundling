@@ -1,14 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Bundling Template</title>
-    </head>
-    <body>
-        <h4 style="margin-bottom: -20px">Running on Webpack dev server!</h4>
-        <h1>This is Bundling Template</h1>
-        <div id="root"></div>
-        <script src="index.js" type="module"></script>
-    </body>
+<html lang="ar" dir="rtl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Promocode</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="font-cairo scroll-smooth bg-[#F5F6F8] h-[5000px]">
+		<!-- Overlay -->
+		<div
+			class="hidden overlay bg-black/50 fixed w-screen h-screen top-0 left-0"
+		></div>
+
+		<!-- Navbar -->
+		<nav class="sticky shadow-md bg-white top-0 z-50">
+			<!-- container -->
+			<div class="max-w-screen-xl mx-auto p-4">
+				<div
+					class="flex flex-wrap items-center justify-between md:gap-10 lg:gap-36 md:justify-normal"
+				>
+					<a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+						<span class="self-center text-2xl font-semibold whitespace-nowrap"
+							>Logo</span
+						>
+					</a>
+					<button
+						data-collapse-toggle="navbar-default"
+						type="button"
+						class="menu-btn block md:hidden"
+						aria-controls="navbar-default"
+						aria-expanded="false"
+					>
+						<span class="sr-only">Open main menu</span>
+						<svg
+							class="w-5 h-5"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 17 14"
+						>
+							<path
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M1 1h15M1 7h15M1 13h15"
+							/>
+						</svg>
+					</button>
+					<div
+						class="navigations hidden md:flex flex-1 fixed md:relative top-0 left-0 w-64 md:w-full bg-white z-50 shadow-md md:shadow-none pt-14 text-center md:pt-0 h-screen md:h-auto duration-300 -translate-x-64 md:translate-x-0"
+					>
+						<span class="block md:hidden absolute top-4 right-4 x-btn">
+							<?xml version="1.0" encoding="utf-8"?>
+							<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+							<svg
+								width="20px"
+								height="20px"
+								viewBox="0 0 16 16"
+								version="1.1"
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink"
+							>
+								<rect width="16" height="16" id="icon-bound" fill="none" />
+								<polygon
+									points="14.707,2.707 13.293,1.293 8,6.586 2.707,1.293 1.293,2.707 6.586,8 1.293,13.293 2.707,14.707 8,9.414 
+							13.293,14.707 14.707,13.293 9.414,8 "
+								/>
+							</svg>
+						</span>
+						<ul
+							class="flex flex-col md:flex-row justify-between flex-1 rounded-lg text-primary text-xl font-medium space-y-8 md:space-y-0"
+						>
+							<li>
+								<a
+									href="#main"
+									class="block py-2 px-3 md:p-0"
+									aria-current="page"
+									>الصفحة الرئيسية</a
+								>
+							</li>
+							<li>
+								<a href="#about" class="t">من نحن</a>
+							</li>
+							<li>
+								<a href="#services" class="t">خدماتنا</a>
+							</li>
+							<li>
+								<a href="#partners" class="t">الشركاء</a>
+							</li>
+							<li>
+								<a href="#policies" class="t">السياسة والأحكام</a>
+							</li>
+							<li>
+								<a href="#contact" class="t">تواصل معنا</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Hero section -->
+		<header id="main">
+			<div class="max-w-screen-xl mx-auto p-4">
+				<div
+					class="bg-[url('./assets/images/hero.png')] w-full h-[600px] rounded-xl bg-center bg-cover relative border border-[#ccc]"
+				>
+					<div
+						class="absolute top-20 px-5 w-full right-0 text-center md:text-right md:right-14 md:w-2/5 md:px-0 space-y-8"
+					>
+						<span class="text-8xl"> Logo </span>
+						<p class="text-2xl font-normal text-black md:text-secondray">
+							الشركة الرائدة في تقديم حلول البرمجة والتسويق الرقمي، نعمل بشغف
+							على تطوير حلول مبتكرة تلبي احتياجات عملائنا وتساعدهم على تحقيق
+							النجاح في عالم التقنية والتسويق الرقمي.
+						</p>
+						<a
+							class="bg-primary mt-10 block w-fit text-white px-3 py-2 rounded-lg mx-auto md:mx-0 hover:opacity-85 duration-300"
+							href=""
+							target="_blank"
+							>طلب الخدمة</a
+						>
+					</div>
+				</div>
+			</div>
+			<!-- stats -->
+			<div class="flex"></div>
+		</header>
+
+		<script src="index.ts" type="module"></script>
+	</body>
 </html>
