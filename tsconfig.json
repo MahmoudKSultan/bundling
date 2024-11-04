@@ -1,0 +1,18 @@
+{
+    "include": ["declarations.d.ts", "src/**/*"],
+    "compilerOptions": {
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es5",
+        "jsx": "react",
+        "allowJs": true,
+        "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules
+        "moduleResolution": "node"
+
+        // "baseUrl": "./src",
+        // path: {
+        //     "src/*": ["./src/*"]
+        // },
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "name": "init",
+    "version": "1.0.0",
+    "description": "Bundling",
+    "main": "main.js",
+    "scripts": {
+        "build": "webpack",
+        "dev": "webpack serve",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Mahmoud Abu Sultan",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/preset-react": "^7.25.7",
+        "date-fns": "^4.1.0",
+        "html-webpack-plugin": "^5.6.2",
+        "lodash": "^4.17.21",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.6.3"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.25.8",
+        "@babel/preset-env": "^7.25.8",
+        "@types/node": "^22.7.9",
+        "@types/react": "^18.3.11",
+        "@types/react-dom": "^18.3.1",
+        "@types/webpack": "^5.28.5",
+        "@types/webpack-dev-server": "^4.7.1",
+        "babel": "^5.8.38",
+        "babel-loader": "^9.2.1",
+        "css-loader": "^7.1.2",
+        "sass": "^1.80.3",
+        "sass-loader": "^16.0.2",
+        "style-loader": "^4.0.0",
+        "ts-node": "^10.9.2",
+        "webpack": "^5.95.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.1.0"
+    }
+}
