@@ -4,7 +4,7 @@ import "webpack-dev-server";
 import webpack from "webpack";
 
 const webpackConfig: webpack.Configuration = {
-	mode: "development",
+	mode: "production",
 	entry: path.resolve(__dirname, "src/index.ts"),
 	output: {
 		filename: "bundle.[contenthash].js",
@@ -40,8 +40,22 @@ const webpackConfig: webpack.Configuration = {
 				use: ["style-loader", "css-loader", "postcss-loader"],
 			},
 			{
+				test: /\.html$/i,
+				loader: "html-loader",
+			},
+			{
 				test: /\.(png|jpg|jpeg|svg|gif)/,
-				type: "asset/resource",
+				// type: "asset/resource",
+				use: [
+					{
+						options: {
+							name: "[name].[ext]",
+							outputPath: "assets/images/",
+							publicPath: "assets/images/",
+						},
+						loader: "file-loader?name=[path][name].[ext]!extract-loader!html-loader",
+					},
+				],
 			},
 		],
 	},
@@ -57,7 +71,7 @@ const webpackConfig: webpack.Configuration = {
 	devServer: {
 		port: 3000, // customize the port
 		static: {
-			directory: path.resolve(__dirname, "dist"),
+			directory: path.resolve(__dirname, "src"),
 		},
 		hot: true, // hot reloading
 		open: true, // open the page when server starts
@@ -67,6 +81,11 @@ const webpackConfig: webpack.Configuration = {
 	optimization: {
 		usedExports: true,
 		chunkIds: "named",
+	},
+	performance: {
+		hints: false,
+		maxEntrypointSize: 512000,
+		maxAssetSize: 512000,
 	},
 };
 

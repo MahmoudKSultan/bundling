@@ -1,11 +1,14 @@
+import logo from "./assets/images/promocode.png";
 import "./styles.css";
 const navigationsEl = document.querySelector(".navigations");
 const menuBtnEl = document.querySelector(".menu-btn");
 const xBtnEl = document.querySelector(".x-btn");
 const overlayEl = document.querySelector(".overlay");
+const accordionEls = document.querySelectorAll(".accordion-el");
 
 document.addEventListener("DOMContentLoaded", () => {
 	document.addEventListener("click", () => hideSidebar());
+
 	window.addEventListener("resize", () => {
 		if (window.innerWidth >= 767) {
 			hideSidebar();
@@ -25,6 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		e.stopPropagation();
 		hideSidebar();
 	});
+
+	accordionEls.forEach((el) =>
+		el.addEventListener("click", () => {
+			el.classList.toggle("h-10");
+			// rotate the arrow
+			const arrow = el.querySelector("img");
+			arrow.classList.toggle("rotate-180");
+		})
+	);
 });
 
 function showSidebar() {
