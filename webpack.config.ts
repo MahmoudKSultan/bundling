@@ -24,13 +24,13 @@ const webpackConfig: webpack.Configuration = {
 				use: {
 					loader: "babel-loader",
 					options: {
-						presets: ["@babel/preset-env"], // Add React preset
+						presets: ["@babel/preset-env"],
 					},
 				},
 			},
 			{
 				// Add a rule for TypeScript files
-				test: /\.(tsx|ts)?$/,
+				test: /\.ts$/,
 				exclude: /node_modules/,
 				use: "ts-loader",
 			},
@@ -44,18 +44,11 @@ const webpackConfig: webpack.Configuration = {
 				loader: "html-loader",
 			},
 			{
-				test: /\.(png|jpg|jpeg|svg|gif)/,
-				// type: "asset/resource",
-				use: [
-					{
-						options: {
-							name: "[name].[ext]",
-							outputPath: "assets/images/",
-							publicPath: "assets/images/",
-						},
-						loader: "file-loader?name=[path][name].[ext]!extract-loader!html-loader",
-					},
-				],
+				test: /\.(png|jpe?g|ico|svg|webp)$/,
+				type: "asset/resource",
+				generator: {
+					filename: "assets/images/[name][ext]",
+				},
 			},
 		],
 	},

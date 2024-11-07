@@ -7,6 +7,23 @@
 	scroll-padding: 70px;
 }
 
-.squared-bullets > li::marker {
+body {
+	background-color: #F5F6F8;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+a,
+li,
+button,
+div {
+	font-family: "Cairo", sans-serif;
+}
+
+.squared-bullets>li::marker {
 	font-size: 12px;
 }
